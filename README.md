@@ -5,32 +5,45 @@
 - Francesco Trematerra - 122640
 - Tiago Lopes - 122648
 
-----
+---
 
 # Scrum Product Backlog
 
 ## User Stories
 
-1. Como jogador, quero escolher um nickname para me identificar durante as partidas.
+1. Como jogador, quero desligar o som do jogo para jogar sem áudio quando desejar.
 
-2. Como jogador, quero jogar contra um bot para praticar sozinho.
+2. Como jogador, quero partilhar um link de convite para iniciar uma partida privada.
 
-3. Como jogador, quero jogar contra outro jogador online para competir em tempo real.
+---
 
-4. Como jogador, quero partilhar um link de convite para iniciar uma partida privada.
+# Testes Automatizados
 
-5. Como jogador, quero posicionar os meus navios manualmente para definir a minha estratégia.
+## DisableSoundTest
 
-6. Como jogador, quero disparar contra o tabuleiro adversário para tentar afundar os navios inimigos.
+Este teste verifica se o jogador consegue abrir as definições do jogo e desligar o som com sucesso.
 
-7. Como jogador, quero visualizar os tiros acertados e falhados para acompanhar o progresso da partida.
+### Passos testados
 
-8. Como jogador, quero receber indicação visual quando um navio é afundado.
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Abrir o menu de definições
+4. Desligar o som
+5. Verificar que o estado do botão mudou corretamente
 
-9. Como jogador, quero consultar as regras do jogo para compreender o funcionamento da aplicação.
+---
 
-10. Como jogador, quero reiniciar ou abandonar uma partida quando necessário.
+## CopyInviteLinkTest
 
-11. Como jogador, quero consultar estatísticas e rankings para comparar desempenho.
+Este teste verifica se o jogador consegue criar uma sala privada e copiar o link de convite.
 
-12. Como jogador, quero participar em campeonatos online para competir com outros jogadores.
+### Passos testados
+
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play with a friend”
+4. Inserir o nickname `"tester"`
+5. Carregar em “Continue”
+6. Entrar na sala privada
+7. Copiar o link de convite
+8. Verificar a mensagem `"Copied to clipboard"`
