@@ -1,34 +1,63 @@
 # BlackBattleship
 
-## Grupo
-- Tiago Lopes - LETI-122648
-- Francesco Trematerra - LETI-122640
+## Elementos do Grupo
+
+- Francesco Trematerra - 122640
+- Tiago Lopes - 122648
 
 
 # Scrum Product Backlog
 
 ## User Stories
 
-1. Como jogador, quero escolher um nickname para me identificar durante as partidas.
+### User Story 1
+Como jogador, quero desligar o som do jogo nas definições para jogar sem áudio.
 
-2. Como jogador, quero jogar contra um bot para praticar sozinho.
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Abrir definições
+4. Desligar o som
+5. Verificar que o estado do botão mudou
 
-3. Como jogador, quero jogar contra outro jogador online para competir em tempo real.
+---
 
-4. Como jogador, quero partilhar um link de convite para iniciar uma partida privada.
+### User Story 2
+Como jogador, quero partilhar um link de convite para iniciar uma partida privada.
 
-5. Como jogador, quero posicionar os meus navios manualmente para definir a minha estratégia.
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play with a friend”
+4. Inserir o nickname "tester"
+5. Carregar em “Continue”
+6. Entrar na sala privada
+7. Copiar o link de convite
 
-6. Como jogador, quero disparar contra o tabuleiro adversário para tentar afundar os navios inimigos.
+---
 
-7. Como jogador, quero visualizar os tiros acertados e falhados para acompanhar o progresso da partida.
+### User Story 3
+Como jogador, quero jogar contra um robô para praticar sozinho.
 
-8. Como jogador, quero receber indicação visual quando um navio é afundado.
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play vs robot”
+4. Inserir o nickname "tester"
+5. Carregar em “Continue”
+6. Verificar que entrou numa partida contra o robô através da mudança de URL
 
-9. Como jogador, quero consultar as regras do jogo para compreender o funcionamento da aplicação.
+---
 
-10. Como jogador, quero reiniciar ou abandonar uma partida quando necessário.
+### User Story 4
+Como jogador, quero disparar contra o tabuleiro adversário para tentar afundar os navios inimigos.
 
-11. Como jogador, quero consultar estatísticas e rankings para comparar desempenho.
-
-12. Como jogador, quero participar em campeonatos online para competir com outros jogadores.
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play vs robot”
+4. Inserir o nickname "tester"
+5. Carregar em “Continue”
+6. Entrar numa partida contra o robô
+7. Carregar numa coordenada do tabuleiro adversário
+8. Verificar que o ataque foi realizado
