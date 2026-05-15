@@ -7,14 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    @FindBy(css = "[data-test='site-header-search-action']")
+    @FindBy(xpath = "//button[contains(@data-test,'search')]")
     public WebElement searchButton;
 
-    @FindBy(linkText = "Products")
-    public WebElement productsMenu;
+    @FindBy(xpath = "//span[contains(text(),'Developer Tools')]")
+    public WebElement seeDeveloperToolsButton;
 
-    @FindBy(xpath = "//a[contains(@href,'/tools')]")
-    public WebElement allProductsButton;
+    @FindBy(xpath = "//a[contains(@href,'/developer-tools/')]")
+    public WebElement findYourToolsButton;
+
+    @FindBy(xpath = "//button[contains(.,'Developer Tools')]")
+    public WebElement toolsMenu;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
