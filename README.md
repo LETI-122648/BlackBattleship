@@ -115,4 +115,4 @@ Como jogador, quero visualizar um avatar na loja para consultar os monstros disp
 3. Carregar em “Shop”
 4. Selecionar a categoria “Monsters”
 5. Selecionar o avatar “Mr. Happy”
-6. Verificar que a janela de visualização do avatar abriu 
+6. Verificar que a janela de visualização do avatar abriu  
