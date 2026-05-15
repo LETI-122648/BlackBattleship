@@ -43,7 +43,7 @@ public class PlayVsRobotTest {
 
             consentButton.click();
 
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
         } catch (Exception ignored) {
         }
@@ -56,7 +56,7 @@ public class PlayVsRobotTest {
     }
 
     @Test
-    public void playVsRobotTest() {
+    public void playVsRobotTest() throws InterruptedException {
 
         // carregar em "Play vs robot"
         WebElement robotButton = wait.until(
@@ -64,6 +64,8 @@ public class PlayVsRobotTest {
                         By.xpath("//span[contains(text(),'Play vs robot')]")
                 )
         );
+
+        Thread.sleep(1000);
 
         robotButton.click();
 
@@ -74,8 +76,12 @@ public class PlayVsRobotTest {
                 )
         );
 
+        Thread.sleep(1000);
+
         // inserir nickname
         nicknameField.sendKeys("tester");
+
+        Thread.sleep(1000);
 
         // carregar em continue
         WebElement continueButton = wait.until(
@@ -83,6 +89,8 @@ public class PlayVsRobotTest {
                         By.cssSelector("button[type='submit']")
                 )
         );
+
+        Thread.sleep(1000);
 
         continueButton.click();
 
@@ -92,5 +100,8 @@ public class PlayVsRobotTest {
         );
 
         assertTrue(driver.getCurrentUrl().contains("/r/"));
+
+        // manter o jogo aberto durante 2 segundos
+        Thread.sleep(2000);
     }
 }
