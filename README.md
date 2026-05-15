@@ -34,3 +34,31 @@ Como jogador, quero partilhar um link de convite para iniciar uma partida privad
 5. Carregar em “Continue”
 6. Entrar na sala privada
 7. Copiar o link de convite
+
+---
+
+### User Story 3
+Como jogador, quero jogar contra um robô para praticar sozinho.
+
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play vs robot”
+4. Inserir o nickname "tester"
+5. Carregar em “Continue”
+6. Verificar que entrou numa partida contra o robô através da mudança de URL
+
+---
+
+### User Story 4
+Como jogador, quero disparar contra o tabuleiro adversário para tentar afundar os navios inimigos.
+
+#### Passos testados
+1. Aceder ao website do Battleship
+2. Aceitar cookies
+3. Carregar em “Play vs robot”
+4. Inserir o nickname "tester"
+5. Carregar em “Continue”
+6. Entrar numa partida contra o robô
+7. Carregar numa coordenada do tabuleiro adversário
+8. Verificar que o ataque foi realizado
