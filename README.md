@@ -5,7 +5,6 @@
 - Francesco Trematerra - 122640
 - Tiago Lopes - 122648
 
----
 
 # Scrum Product Backlog
 
