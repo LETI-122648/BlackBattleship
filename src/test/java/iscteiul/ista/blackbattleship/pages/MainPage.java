@@ -1,4 +1,4 @@
-package iscteiul.ista.blackbattleship;
+package iscteiul.ista.blackbattleship.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +18,15 @@ public class MainPage {
 
     @FindBy(xpath = "//button[contains(.,'Developer Tools')]")
     public WebElement toolsMenu;
+
+    @FindBy(css = "button.fc-button.fc-cta-consent")
+    public WebElement cookiesButton;
+
+    @FindBy(css = "button[data-test='settings-button']")
+    public WebElement settingsButton;
+
+    @FindBy(css = "button[data-test='sound-button']")
+    public WebElement soundButton;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
