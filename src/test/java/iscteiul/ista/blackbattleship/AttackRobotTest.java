@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,7 +45,7 @@ public class AttackRobotTest {
 
             consentButton.click();
 
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
         } catch (Exception ignored) {
         }
@@ -57,7 +58,7 @@ public class AttackRobotTest {
     }
 
     @Test
-    public void attackRobotTest() {
+    public void attackRobotTest() throws InterruptedException {
 
         // carregar em "Play vs robot"
         WebElement robotButton = wait.until(
@@ -66,24 +67,32 @@ public class AttackRobotTest {
                 )
         );
 
+        Thread.sleep(1000);
+
         robotButton.click();
 
-        // esperar popup do nickname
+        // esperar popup nickname
         WebElement nicknameField = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.cssSelector("input[formcontrolname='username']")
                 )
         );
 
+        Thread.sleep(1000);
+
         // inserir nickname
         nicknameField.sendKeys("tester");
 
-        // carregar em continue
+        Thread.sleep(1000);
+
+        // carregar continue
         WebElement continueButton = wait.until(
                 ExpectedConditions.elementToBeClickable(
                         By.cssSelector("button[type='submit']")
                 )
         );
+
+        Thread.sleep(1000);
 
         continueButton.click();
 
@@ -94,32 +103,49 @@ public class AttackRobotTest {
 
         assertTrue(driver.getCurrentUrl().contains("/r/"));
 
-        // esperar tabuleiro do adversário
+        // esperar tabuleiro carregar
         WebElement enemyBoard = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                        By.cssSelector("table.table-board")
+                        By.cssSelector("div.opponent table.table-board")
                 )
         );
 
-        // obter células clicáveis
-        List<WebElement> cells = enemyBoard.findElements(
-                By.cssSelector("td")
-        );
+        // esperar turno
+        Thread.sleep(5000);
 
-        // atacar primeira célula disponível
-        cells.get(0).click();
+        // obter células do tabuleiro inimigo
+        List<WebElement> cells = enemyBoard.findElements(By.cssSelector("td"));
 
-        // verificar que o ataque aconteceu
-        wait.until(
-                ExpectedConditions.presenceOfElementLocated(
-                        By.cssSelector("svg.intersection")
-                )
-        );
+        boolean attacked = false;
 
-        assertTrue(
-                driver.findElements(
-                        By.cssSelector("svg.intersection")
-                ).size() > 0
-        );
+        // procurar primeira célula clicável
+        for (WebElement cell : cells) {
+
+            try {
+
+                Thread.sleep(200);
+
+                // clicar na célula
+                ((JavascriptExecutor) driver)
+                        .executeScript("arguments[0].click();", cell);
+
+                Thread.sleep(1000);
+
+                // verificar se apareceu ataque
+                if (cell.findElements(By.cssSelector("svg.intersection")).size() > 0) {
+
+                    attacked = true;
+                    break;
+                }
+
+            } catch (Exception ignored) {
+            }
+        }
+
+        // validar que houve ataque real
+        assertTrue(attacked);
+
+        // deixar jogo aberto no final
+        Thread.sleep(2000);
     }
 }
