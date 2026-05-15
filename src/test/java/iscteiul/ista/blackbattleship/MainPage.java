@@ -1,22 +1,23 @@
 package iscteiul.ista.blackbattleship;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-// page_url = https://www.jetbrains.com/
 public class MainPage {
-    @FindBy(xpath = "//*[@data-test-marker='Developer Tools']")
+
+    @FindBy(xpath = "//button[contains(@data-test,'search')]")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Developer Tools')]")
     public WebElement seeDeveloperToolsButton;
 
-    @FindBy(xpath = "//*[@data-test='suggestion-action']")
+    @FindBy(xpath = "//a[contains(@href,'/developer-tools/')]")
     public WebElement findYourToolsButton;
 
-    @FindBy(xpath = "//div[@data-test='main-menu-item' and @data-test-marker = 'Developer Tools']")
+    @FindBy(xpath = "//button[contains(.,'Developer Tools')]")
     public WebElement toolsMenu;
-
-    @FindBy(css = "[data-test='site-header-search-action']")
-    public WebElement searchButton;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
